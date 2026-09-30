@@ -1,0 +1,16 @@
+name: inspect runner
+on: push
+jobs:
+  inspect-github-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout workspace
+        uses: actions/checkout@v4
+      - name: print runner's kernel details and repo settings
+        run: |
+          uname -a
+          find . -type f
+      - name: print no.of files in the repo
+        run: |
+          count=$(find . -type f | wc -l)
+          echo "Total files: $count"
