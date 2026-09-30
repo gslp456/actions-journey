@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: greeting message
-        run: echo "Hello World!"
+        run: echo "Hello World! How are you ?"
 
