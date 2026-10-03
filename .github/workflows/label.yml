@@ -4,6 +4,6 @@ jobs:
   build_run_label:
     runs-on: ubuntu-latest
     steps:
-      name: generate and print label
-      run:
-        echo "the label is ${{ format('build-{0}-{1}', github.run_number, github.ref_name) }}"
+      - name: generate and print label
+        run:
+          echo "the label is ${{ format('build-{0}-{1}', github.run_number, github.ref_name) }}"
