@@ -1,0 +1,23 @@
+name: env variable usage workflow
+on: push
+env: 
+  APP_NAME: journey
+jobs:
+  env_variable_usage_workflow:
+    env:
+      LOG_LEVEL: info
+    runs-on: ubuntu-latest
+    steps:
+      - name: print workflow level and job level env variables
+        run: |
+          echo "Application name: $APP_NAME"
+          echo "Logging level: $LOG_LEVEL"
+      - name: Print workflow level and job level overrides
+        env:
+          LOG_LEVEL: debug
+        run: |
+          echo "Application name: $APP_NAME"
+          echo "Logging level: $LOG_LEVEL"
+
+
+
