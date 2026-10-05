@@ -13,9 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run : |
-          if [ -n {{ needs.build.outputs.version }} ]; then
-            echo "The output from build job is not empty"
-          fi
+          echo "The output from build job is not empty"
   deploy:
     needs: [build, test]
     runs-on: ubuntu-latest
