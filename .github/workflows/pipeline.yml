@@ -6,15 +6,13 @@ jobs:
     outputs:
       version: ${{ steps.ver.outputs.version }}
     steps:
-      - name: compute version
-        id: ver
+      - id: ver
         run: echo "version=1.2.3" >> "$GITHUB_OUTPUT"
   test:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: test that output exist
-        run : |
+      - run : |
           if [ -n {{ needs.build.outputs.version }} ]; then
             echo "The output from build job is not empty"
           fi
@@ -22,7 +20,6 @@ jobs:
     needs: [build, test]
     runs-on: ubuntu-latest
     steps:
-      - name: print the version number
-        run: |
+      - run: |
           echo " The version is ${{ needs.build.outputs.version }} "
 
