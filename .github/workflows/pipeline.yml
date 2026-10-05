@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: test that output exist
         run : |
-          if [ -n {{ needs.build.outputs.version }} ; then
+          if [ -n {{ needs.build.outputs.version }} ]; then
             echo "The output from build job is not empty"
           fi
   deploy:
