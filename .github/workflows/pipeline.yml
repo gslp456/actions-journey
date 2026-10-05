@@ -12,7 +12,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: echo "The output from build job is not empty"
+      - run: echo "running tests"
   deploy:
     needs: [build, test]
     runs-on: ubuntu-latest
