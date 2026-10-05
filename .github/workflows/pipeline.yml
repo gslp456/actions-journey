@@ -1,0 +1,35 @@
+name: pipeline
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.ver.outputs.version }}
+    steps:
+<<<<<<< HEAD
+      - name: Compute version
+=======
+      - name: compute version
+>>>>>>> d0d5cc0 (Add pipeline with dependent jobs)
+        id: ver
+        run: echo "version=1.0.$GITHUB_RUN_NUMBER" >> "$GITHUB_OUTPUT"
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+<<<<<<< HEAD
+      - name: Run tests
+=======
+      - name: Run-tests
+>>>>>>> d0d5cc0 (Add pipeline with dependent jobs)
+        run: echo "tests passed"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, test]
+    steps:
+      - name: Deploy
+        run: echo "Deploying version ${{ needs.build.outputs.version }}"
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0d5cc0 (Add pipeline with dependent jobs)
