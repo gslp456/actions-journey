@@ -12,12 +12,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "The output from build job is not empty"
+      - run: echo "The output from build job is not empty"
   deploy:
     needs: [build, test]
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo " The version is ${{ needs.build.outputs.version }} "
+      - run: echo "The version is ${{ needs.build.outputs.version }}"
 
