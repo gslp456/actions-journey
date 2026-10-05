@@ -7,7 +7,6 @@ jobs:
       version: ${{ steps.ver.outputs.version }}
     steps:
       - name: Compute version
-      - name: compute version
         id: ver
         run: echo "version=1.0.$GITHUB_RUN_NUMBER" >> "$GITHUB_OUTPUT"
   test:
