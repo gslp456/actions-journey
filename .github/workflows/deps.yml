@@ -6,11 +6,6 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v4
-      - name: show current directory
-        run: |
-          pwd
-          ls -la
-          find . -name 'requirements.txt'
       - name: cache
         uses: actions/cache@v4
         with:
