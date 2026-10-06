@@ -1,0 +1,10 @@
+name: action with an input
+description: an action with an iput
+inputs:
+  app-name:
+    description: name of the app
+    required: true
+runs:
+  using: composite
+    - run: echo "the input is ${{ inputs.app-name }}"
+      shell: bash
