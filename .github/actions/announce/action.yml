@@ -6,5 +6,6 @@ inputs:
     required: true
 runs:
   using: composite
+  steps:
     - run: echo "the input is ${{ inputs.app-name }}"
       shell: bash
