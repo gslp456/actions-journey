@@ -1,0 +1,10 @@
+name: reusable workflow
+on: workflow_call
+jobs:
+  resuable_workflow_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: print pwd
+        run: echo "I am at $(pwd)"
