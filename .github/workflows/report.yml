@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: write report
         run: |
-          $date > report.txt
+          echo $(date) > report.txt
       - name: upload report
         uses: actions/upload-artifact@v4
         with:
