@@ -1,0 +1,18 @@
+name: tidy_workflow
+on: push
+concurrency:
+  group: tidy_workflow-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  tidy_workflow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10 
+    steps:
+      - name: checkout repository code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
+      - name: print umber of files
+        run: |
+          pwd
+          count=$(find . -type f | wc -l)
+          echo "Total files: $count"
+
