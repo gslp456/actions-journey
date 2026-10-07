@@ -1,7 +1,7 @@
 name: tidy_workflow
 on: push
 concurrency:
-  group: tidy_workflow-${{ github.ref }}
+  group: tidy-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   tidy_workflow:
